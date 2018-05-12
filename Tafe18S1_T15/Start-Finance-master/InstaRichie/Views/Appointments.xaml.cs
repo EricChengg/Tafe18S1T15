@@ -56,7 +56,7 @@ namespace StartFinance.Views
 
         private async void AddData(object sender, RoutedEventArgs e)
         {
-            Calculations nnn = new Calculations();
+            Checkout nnn = new Checkout();
             try
             {
                 //string CDay = DateStamp.Date.Value.Day.ToString();
@@ -135,7 +135,7 @@ namespace StartFinance.Views
         {
             try
             {
-                Calculations nnn = new Calculations();
+                Checkout nnn = new Checkout();
                 //string CDay = DateStamp1.Date.Value.Day.ToString();
                 //string CMonth = DateStamp1.Date.Value.Month.ToString();
                 //string CYear = DateStamp1.Date.Value.Year.ToString();
