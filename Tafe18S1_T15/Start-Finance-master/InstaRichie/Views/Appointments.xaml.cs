@@ -110,7 +110,7 @@ namespace StartFinance.Views
                 {
                     conn.CreateTable<Appointments>();
                     var query1 = conn.Table<Appointments>();
-                    var query3 = conn.Query<Appointments>("DELETE FROM Debt WHERE ID ='" + AccSelection + "'");
+                    var query3 = conn.Query<Appointments>("DELETE FROM Appointments WHERE ID ='" + AccSelection + "'");
                     ApptList1.ItemsSource = query1.ToList();
                 }
 
@@ -169,7 +169,7 @@ namespace StartFinance.Views
                     });
                     double FinalAmount = AccountBalance() - Money;
                     var query3 = conn.Query<Accounts>("UPDATE Accounts SET InitialAmount = " + FinalAmount + " WHERE AccountName ='" + AccountSelection + "'");
-                    MessageDialog Confirmed = new MessageDialog("Debt Paid successfully");
+                    MessageDialog Confirmed = new MessageDialog("Appointment Paid successfully");
                     await Confirmed.ShowAsync();
                     Results();
 
@@ -184,7 +184,7 @@ namespace StartFinance.Views
                 }
                 else if (ex is NullReferenceException)
                 {
-                    MessageDialog dialog = new MessageDialog("Please enter the Debt Details", "Oops..!");
+                    MessageDialog dialog = new MessageDialog("Please enter the Appointment Details", "Oops..!");
                     await dialog.ShowAsync();
                 }
             }
@@ -234,7 +234,7 @@ namespace StartFinance.Views
                 {
                     conn.CreateTable<Appointments>();
                     var query1 = conn.Table<Appointments>();
-                    var query3 = conn.Query<Appointments>("DELETE FROM Debt WHERE ID ='" + AccSelection + "'");
+                    var query3 = conn.Query<Appointments>("DELETE FROM Appointments WHERE ID ='" + AccSelection + "'");
                     ApptList.ItemsSource = query1.ToList();
                 }
 
