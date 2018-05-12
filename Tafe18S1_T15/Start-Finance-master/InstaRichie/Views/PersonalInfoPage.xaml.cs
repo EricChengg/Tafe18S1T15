@@ -103,7 +103,7 @@ namespace StartFinance.Views
                 }
                 else if (ex is SQLiteException)
                 {
-                    MessageDialog dialog = new MessageDialog("A Similar Asset Nane already exists, Try a different name", "Oops..!");
+                    MessageDialog dialog = new MessageDialog("A Similar Name already exists, Try a different name", "Oops..!");
                     await dialog.ShowAsync();
                 }
             }
@@ -129,11 +129,10 @@ namespace StartFinance.Views
                 // checks if data is null else inserts
                 try
                 {
-                    string FirstName = ((PersonalInfo)PersonalListView.SelectedItem).FirstName;
-                    string LastName = ((PersonalInfo)PersonalListView.SelectedItem).LastName;
+                    int ID = ((PersonalInfo)PersonalListView.SelectedItem).ID;
 
                     // Delete in sql
-                    var querydel = conn.Query<PersonalInfo>("DELETE FROM PersonalInfo WHERE FirstName='" + FirstName + "'" + "And LastName =" +LastName );
+                    var querydel = conn.Query<PersonalInfo>("DELETE FROM PersonalInfo WHERE ID ==" + ID);
                     Results();
                     //conn.CreateTable<PersonalInfo>();
                     //var querytable = conn.Query<PersonalInfo>("DELETE FROM Transactions WHERE Account='" + AccountsLabel + "'");
