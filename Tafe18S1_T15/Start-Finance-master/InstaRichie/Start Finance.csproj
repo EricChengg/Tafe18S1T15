@@ -96,6 +96,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Backup\project.json" />
     <None Include="Start Finance_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +170,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backup\Start Finance.csproj" />
     <Content Include="Help.htm" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
